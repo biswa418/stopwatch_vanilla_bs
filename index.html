@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <script src="https://kit.fontawesome.com/7fa3a78bc5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./src/styles.css" />
+</head>
+
+<body>
+    <i id="image-clock" class="fa-solid fa-stopwatch"></i>
+
+    <div id="stopwatch">
+        <div id="show">
+            <span id="hour">00</span> <span id="separator">:</span>
+            <span id="minute">00</span>:<span id="second">00</span>:<span id="ms">00</span>
+        </div>
+
+        <div>
+            <button id="start">
+                Start
+            </button>
+
+            <button id="stop">
+                Stop
+            </button>
+
+            <button id="reset">
+                Reset
+            </button>
+        </div>
+    </div>
+
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <script type="text/javascript" src="./src/script.js"></script>
+</body>
+
+</html>
