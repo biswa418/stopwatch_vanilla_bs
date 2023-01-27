@@ -1,4 +1,3 @@
-
 // contents
 var second = document.getElementById('second');
 var minutes = document.getElementById('minute');
@@ -19,13 +18,11 @@ var waves = document.querySelectorAll('.wave');
 //set the content
 let content = 0;
 var id = null; //interval global var
-let content2 = 0;
-var id2 = null; //for ms var
 
 // flag for the first time starting
 let started = false;
 
-
+//counter function handles the increment
 var startCounter = function () {
 
     id = setInterval(function () {
@@ -44,6 +41,8 @@ var startCounter = function () {
             } else {
                 hours.innerText = Number(hours.innerText) + 1;
             }
+
+            //reset the minute timer
             minutes.innerText = "00";
         }
 
@@ -78,16 +77,18 @@ var startCounter = function () {
             }
 
         }
-
+        // we're using 1/100 second precision as per most stopwatch uses these days, interval time is 10ms
     }, 10);
 
 };
 
+//when start button is clicked
 start.addEventListener('click', function (e) {
     if (!started) {
         started = true;
         startCounter();
 
+        // change css style
         body.style.animation = "gradient 15s ease infinite";
 
         waves[0].style.animation = "wave 10s -3s linear infinite";
@@ -100,10 +101,12 @@ start.addEventListener('click', function (e) {
     }
 });
 
+//when stop button is clicked
 stop.addEventListener('click', function () {
     started = false;
     clearInterval(id);
 
+    //change css style
     body.style.animation = "none";
 
     for (let i in waves) {
@@ -113,22 +116,26 @@ stop.addEventListener('click', function () {
 
 });
 
+//when reset button is clicked
 reset.addEventListener('click', function () {
     content = 0;
 
+    //clear the interval
     clearInterval(id);
 
+    //reset everything
     second.innerText = "00";
     minutes.innerText = "00";
     ms.innerText = "00";
-    hours.style.display = "none";
+    hours.style.display = "none"; //hide the hour mark
     separator.style.display = "none";
 
+    //css style reset
     body.style.animation = "none";
 
     for (let i in waves)
         waves[i].style.display = "none";
-})
+});
 
 
 
