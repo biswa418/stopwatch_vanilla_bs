@@ -2,6 +2,7 @@
 *::after,
 *::before {
     box-sizing: border-box;
+    /* everything to border-box style */
 }
 
 :root {
@@ -9,13 +10,7 @@
     --sc-color: #85febd;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    margin-top: 30vh;
-    background: linear-gradient(90deg, var(--pm-color), var(--sc-color));
-}
-
+/* the stopwatch logo */
 #image-clock {
     font-size: 16rem;
     position: absolute;
@@ -25,13 +20,14 @@ body {
     transform: rotate(25deg);
 }
 
+/* viewable part of stopwatch */
 #stopwatch {
     /* border: 2px solid black; */
-    /* padding: 5%; */
     font-size: 7rem;
     color: white;
 }
 
+/* all the buttons styling */
 #stopwatch>div>button {
     font-family: sans-serif;
     width: 6rem;
@@ -44,6 +40,7 @@ body {
     border: none;
 }
 
+/* all the buttons styling on hover */
 #stopwatch>div>button:hover {
     cursor: pointer;
     transition: all 0.5s ease-in-out;
@@ -56,11 +53,13 @@ body {
     background-color: #595b5a;
 }
 
+/* all the div element inside the stopwatch view -- just to center things */
 #stopwatch>div {
     /* border: 2px solid blue; */
     text-align: center;
 }
 
+/* stopwatch view */
 #show {
     display: flex;
     align-items: center;
@@ -69,12 +68,14 @@ body {
     font-family: sans-serif;
 }
 
+/* hour part hidden on default */
 #hour,
 #separator {
     flex-shrink: 1;
     display: none;
 }
 
+/* little smaller font for second and ms */
 #second {
     font-size: 6rem;
     margin-top: 3%;
@@ -87,6 +88,9 @@ body {
 
 /* background waves */
 body {
+    display: flex;
+    justify-content: center;
+    margin-top: 30vh;
     background: linear-gradient(315deg, #0172af 3%, #14c3a2 38%, #0de5a8 68%, #85febd 98%);
     /* animation: gradient 15s ease infinite; */
     background-size: 300%;
@@ -107,6 +111,7 @@ body {
     }
 }
 
+/* waves first */
 .wave {
     display: none;
     background: rgb(255 255 255 / 25%);
